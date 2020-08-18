@@ -28,7 +28,7 @@ export default class App extends React.Component {
       {
         isShowModal: !this.state.isShowModal,
         isShowSuggestion: !this.state.isShowSuggestion,
-        selectedCountry: value
+        selectedCountry: value,
       },
       () => console.log(this.state.isShowModalode)
     );
@@ -61,7 +61,11 @@ export default class App extends React.Component {
 
     return (
       <div className="App">
-        <h1>search data using search box</h1>
+        <h1>Tradeshift Global Search</h1>
+        <div style={{ "padding-bottom": "10px" }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
         <select
           name="codes"
           id="codes"
@@ -69,12 +73,14 @@ export default class App extends React.Component {
           onChange={(e) => this.handleCodeSelection(e)}
         >
           {" "}
-          <option  selected disabled hidden>
+          <option selected disabled hidden>
             Choose Country Code
           </option>
           {countryListCodes.length > 0 &&
             countryListCodes.map((code) => (
-              <option key = {code } value={code}>{code}</option>
+              <option key={code} value={code}>
+                {code}
+              </option>
             ))}
         </select>
         <input
